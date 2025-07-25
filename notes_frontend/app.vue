@@ -77,7 +77,8 @@ watch(
 function handleCreate() {
   const id = 'note-' + Math.random().toString(36).slice(2)
   const newNote: Note = { id, title: 'Untitled', content: '', updated: Date.now() }
-  notes.value.unshift(newNote)
+  // Use a new array to ensure Vue's reactivity properly propagates changes to child components
+  notes.value = [newNote, ...notes.value]
   selectedNoteId.value = id
 }
 
