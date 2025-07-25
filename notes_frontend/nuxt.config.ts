@@ -1,6 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
   nitro: {
     routeRules: {
@@ -14,8 +13,8 @@ export default defineNuxtConfig({
   vite: {
     server: {
       host: '0.0.0.0',
-      allowedHosts: true,
-      port: 3000,
-    },
-  },
+      strictPort: true,
+      port: 3000
+    }
+  }
 });
